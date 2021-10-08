@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title> Prova Web Client </title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+      var apiUrl = 'http://localhost:30000/api/courses/';
+      fetch(apiUrl)
+      .then(response => {
+        return response.json();
+      }).then(data => {
+        document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
+        console.log(data);
+      }).catch(err => {
+        console.log(err);
+      });
+  </script>
+  </head>
+  <body>
+    <pre id="json"></pre>
+  </body>
+</html>
